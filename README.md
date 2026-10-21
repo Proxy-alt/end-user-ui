@@ -27,11 +27,10 @@
 - [Deployment](#deployment)
 - [Theming](#theming)
 - [Build command summary](#build-command-summary)
-- [Build source code and Docker images using Maven](#build-using-maven)
+- [Build source code and Docker images using Maven](#build-source-code-and-docker-images-using-maven)
 - [Browser support](#browser-support)
 - [Common questions](#common-questions)
 
-<a name="quick-start"></a>
 ## Quick start
 
 - [Download and install the latest node](https://nodejs.org/en/download/) or verify your node version `node -v`
@@ -48,7 +47,6 @@ Vue provides a CLI to help with managing clients if you wish to make use of it y
 - Run command `npm install -g @vue/cli` to install the Vue Client
 - Then to open the management UI use `vue ui`
 
-<a name="development-server"></a>
 ## Development server
 
 `npm run dev` starts up a standalone node server primarily for ease of development. This development server also provides an easy way to test and understand various identity management features.
@@ -59,18 +57,15 @@ Vue provides a CLI to help with managing clients if you wish to make use of it y
 - Includes its own [testing](#testing)
 - Built off [Vue CLI 3](https://cli.vuejs.org/config/)
 
-<a name="development-server-tools"></a>
 ## Development server tools
 
 - [Node](https://nodejs.org/en/download/) - Version 9.0.0 or newer (ForgeRock development verified 9.5.0)
 - [NPM](https://www.npmjs.com/) - Version 5.0.0 or newer (ForgeRock development verified 6.4.1)
 
-<a name="testing"></a>
 ## Testing
 
 - Run tests with npm: `npm run test:unit`
 
-<a name="testing-tools"></a>
 ## Testing tools
 
 The following testing tools are installed when you install the project dependencies:
@@ -82,7 +77,6 @@ The following testing tools are installed when you install the project dependenc
 - [Chai](http://chaijs.com/) - Assertion library
 - [JSDom](https://github.com/jsdom/jsdom) - Browser simulation
 
-<a name="application-structure"></a>
 ## Application structure
 
 To help you with navigation, the application has the following basic layout:
@@ -118,7 +112,6 @@ vue.config.js - Vue CLI configuration File
 Package.json - Node package JSON for dependency management
 ```
 
-<a name="application-tools"></a>
 ## Application tools
 
 The following application tools are installed when you install the project dependencies:
@@ -133,7 +126,6 @@ The following application tools are installed when you install the project depen
 
 There are several other libraries included with both node and the application, but these are the primary core libraries used throughout. For additional libraries, see package.json `/package.json`
 
-<a name="translations-and-text"></a>
 ## Translations and Text
 
 Application translation uses [Vue i18n](https://kazupon.github.io/vue-i18n/en/) and the `openidm/info/uiconfig` endpoint to get the current user's browser language.
@@ -165,14 +157,12 @@ For example:
         }
     }
 ```
-<a name="deployment"></a>
 ## Deployment
 
 - To deploy the application, run: `npm run build`
 
 Running `npm run build` creates a distribution file in the `dist` folder and two detail files for support or QA purposes: `COMMITHASH` and `VERSION`. Each deployment use case is different.
 
-<a name="theming"></a>
 ## Theming
 
 The following theming tools are installed when you install the project dependencies:
@@ -200,7 +190,6 @@ The project also includes a style guide, available when running the development 
 
 The style guide gives an indication of how new themes and styles will impact base application components.
 
-<a name="build-command-summary"></a>
 ## Build command summary
 
 ``` bash
@@ -231,7 +220,6 @@ and a `nginx.conf` file to run the application using [NGINX](https://www.nginx.c
 docker build -t custom/end-user-ui:custom-tag .
 ```
 
-<a name="build-using-maven"></a>
 ## Build source code and Docker images using Maven
 
 This project's source code can be built using [Apache Maven](https://maven.apache.org/)
@@ -252,7 +240,6 @@ mvn docker:build docker:push \
   -Ddocker.tags.1=other-tag
 ```
 
-<a name="browser-support"></a>
 ## Browser support
 
 - Internet Explorer 11 or higher
@@ -260,7 +247,6 @@ mvn docker:build docker:push \
 - Latest Safari
 - Latest Chrome
 
-<a name="common-questions"></a>
 ## Common Questions
 
 - [Who This Project is For](#who-this-project-is-for)
@@ -280,13 +266,11 @@ mvn docker:build docker:push \
 - [How to Control Personal Data Sharing](#how-to-control-personal-data-sharing)
 - [Where to Manage Account Controls](#where-to-manage-account-controls)
 
-<a name="who-this-project-is-for"></a>
 ### Who This Project is For
 
 This project is meant to help developers and customers understand the features of ForgeRock Identity Management. A basic understanding of Javascript, HTML, CSS and Vue are required
 to successfully navigate and understand the code.
 
-<a name="how-to-add-a-self-service-stage-to-the-ui"></a>
 ### How to Add a Self-Service Stage to the UI
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -376,7 +360,6 @@ These instructions apply to registration, password reset, and forgotten username
 
 5. When these steps are complete, all that remains is to step through the self-service process with the new stage added and validate that everything is hooked up.
 
-<a name="how-to-replace-idm-end-user"></a>
 ### How to Replace IDM End-User Files
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -388,7 +371,6 @@ These instructions apply to registration, password reset, and forgotten username
 
 **If you rebuild IDM you will need to perform these steps again as that process will replace the current zip contents.**
 
-<a name="how-to-change-end-user-ui-path"></a>
 ### How to Change End-User UI Path
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -402,7 +384,6 @@ For example, to change the End-User UI URL to `localhost:8080/exampleui`, edit t
 ```
 
 
-<a name="how-to-provide-logout-url-to-external-applications"></a>
 ### How to Provide Logout URL to External Applications
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -413,7 +394,6 @@ The logout URL is `#logout`, appended to the UI URL. For example, `localhost:808
 
 The logout URL effectively performs the same action as clicking on the **Log out** link of the UI.
 
-<a name="how-to-add-additional-registration-flows"></a>
 ### How to Add Additional Registration Flows
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -437,7 +417,6 @@ The logout URL effectively performs the same action as clicking on the **Log out
 6. Make sure that your IDM `access.js` file is configured properly, based on [these docs](https://docs.pingidentity.com/pingidm/7.5/self-service-reference/uss-registration-config.html). You will see a forbidden access error if this file isn't configured correctly.
 7. Assuming you are on the development sever and have used default settings, you should now be able to navigate through two separate registration flows : `localhost:8081/#/registration` and `localhost:8081/#/registrationsecondflow`.
 
-<a name="how-to-configure-notification-polling"></a>
 ### How to Configure Notification Polling
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -453,7 +432,6 @@ To change the default polling time, follow these steps:
 To turn off polling, comment out or remove the `startPolling` method and remove any reference to that function.
 This will result in the notifications loading only when the application is first loaded.
 
-<a name="how-to-configure-rest-call-timeouts"></a>
 ### How to Configure REST Call Timeouts
 
 REST calls in the End-User UI time out after `5000 milliseconds` by default. To change this timeout, follow these steps:
@@ -463,13 +441,11 @@ REST calls in the End-User UI time out after `5000 milliseconds` by default. To 
 3) At the top of the function there is a variable `timeout`.
 4) Set the `timeout` (in milliseconds) to adjust the REST call timeout.
 
-<a name="what-has-changed-with-workflow"></a>
 ### What has Changed with Workflow
 
 With the new End-User UI, the default workflows in IDM have been updated to make use of `Vue JS` as a framework. Previously, these workflows used `JQuery` and `Handlebars`.
 You will need to update any existing workflows to use `Vue JS` in order to use the new End-User UI. **Previously formatted workflows are not supported with the new End-User UI.**
 
-<a name="where-to-find-privacy-and-account-information-in-the-end-user-ui"></a>
 ### Where to Find Privacy and Account Information in the End-User UI
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -500,7 +476,6 @@ What the end user sees upon log in to the End-User UI depends on which features 
       | Personal Data Sharing | Provides control |
       | Account Controls | Includes collected account data (Default) |
 
-<a name="where-to-find-personal-information-in-the-end-user-ui"></a>
 ### Where to Find Personal Information in the End-User UI
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -509,14 +484,12 @@ To view account details in the End-User UI, go to **Profile > Edit Personal Info
 
 Each user can modify this information as needed, as long as `"userEditable"` is set to `"true"` for the property in your project's `managed.json` file. Learn more in [Create and modify object types](https://docs.pingidentity.com/pingidm/7.5/objects-guide/creating-modifying-managed-objects.html).
 
-<a name="where-to-find-sign-in-and-security"></a>
 ### Where to Find Sign-In and Security
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
 
 Under this tab, end users can change their passwords. They can also add, delete, or modify security questions, and link or unlink supported social identity accounts.
 
-<a name="where-to-find-account-preferences"></a>
 ### Where to Find Account Preferences
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -525,7 +498,6 @@ The preferences tab in the End-User UI allows end users to modify marketing pref
 
 End users can toggle marketing preferences. When PingIDM includes a mapping to a marketing database, these preferences are sent to that database. This can help administrators use PingIDM to target marketing campaigns and identify potential leads.
 
-<a name="how-to-configure-trusted-devices"></a>
 ### How to Configure Trusted Devices
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -538,7 +510,6 @@ A trusted device entry is paired with a specific browser on a specific system. T
 
 End users can remove their trusted devices from the tab.
 
-<a name="how-to-control-personal-data-sharing"></a>
 ### How to Control Personal Data Sharing
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
@@ -558,7 +529,6 @@ If enabled, end users manage this information in the **Personal Data Sharing** s
 
 This option supports the right to restrict processing of user personal data.
 
-<a name="where-to-manage-account-controls"></a>
 ### Where to Manage Account Controls
 
 > **IMPORTANT**: This section applies only to PingIDM 7.5 and earlier.
